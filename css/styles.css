@@ -1,0 +1,159 @@
+
+  
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    --primary: #17212F;
+    --secondary: #041C27;
+    --dark: #4B7182;
+    --light: #ededed;
+    --link: #302319;
+    --link-hover: #617A92;
+    --gutters: 15px;
+    
+
+    color: var(--primary);
+    background-color: var(--light);
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 var(--gutters);
+}
+
+a {
+    text-decoration: none;
+    color: var(--link);
+}
+a:hover,
+a:focus,
+a:active {
+    color: var(--link-hover);
+    text-decoration: underline;
+    text-decoration-color: var(--primary)
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+p {
+    text-align: justify;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.text-navigation {
+    text-transform: uppercase;
+    width: 100%;
+    
+}
+.text-navigation .nav-link-list {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.text-navigation .nav-link-list__link {
+    width: 15%;
+    min-width: 80px;
+    max-width: 150px;
+    text-align: center;
+}
+
+.container {
+    padding: var(--gutters)
+} 
+
+.audio {
+    width: 100%;
+}
+
+.video {
+    opacity: 0.8;
+    transition: opacity 0.5s;
+}
+
+.video:hover {
+    opacity: 1;
+}
+
+.header-container {
+    text-align: center;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 50% 50%;
+    margin: 0 calc(-1 * var(--gutters))
+
+}
+
+.grid-container__item {
+    padding: 0 var(--gutters);
+}
+
+.left-column {
+    order: 2;
+}
+
+.main-column {
+    order: 1;
+    grid-column-start: 1;
+    grid-column-end: two;
+}
+.right-column {
+    order: 3;
+}
+
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {  }
+
+@media only screen and ( min-width: 576px ) {
+
+}
+
+
+@media only screen and ( min-width: 768px ) {
+
+}
+
+@media only screen and ( min-width: 992px ) {
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 20% auto 20%;
+        grid-template-rows: none;
+    
+    }
+
+    .left-column {
+        order: 1;
+    }
+
+    
+    .main-column {
+        order: 2;
+        grid-column-start: auto;
+        grid-column-end: auto;
+    }
+    .right-column {
+        order: 3;
+    }
+}
+
+
+
+@media only screen and ( min-width: 1200px ) {
+
+}
