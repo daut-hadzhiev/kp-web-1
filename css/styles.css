@@ -5,35 +5,51 @@
 }
 
 body {
-    /* variables here */
+    /* colors */
+    --white: #fff;
+    --light: #ededed;
+    --light-grey: #cdcdcd;
+    --grey: #bbb;
+    --link: #617A92;
+    --water: #68829e80;
+    --dark: #4B7182;
+    --link-hover: #302319;
     --primary: #17212F;
     --secondary: #041C27;
-    --dark: #4B7182;
-    --grey: #bbb;
-    --light-grey: #cdcdcd;
-    --light: #ededed;
-    --link: #302319;
-    --link-hover: #617A92;
-    --gutters: 15px;
+    --black: #000;
     
+    /* gutters */
+    --gutters: 15px;
 
-    color: var(--primary);
-    background-color: var(--light);
-    max-width: 1440px;
     margin: auto;
+    line-height: 1.25;
+    max-width: 1440px;
+    color: var(--primary);
     padding: 0 var(--gutters);
+    background-color: var(--light);
+}
+
+::selection {
+    color:  var(--white);
+    background: var(--dark);
+}
+::-moz-selection {
+    color:  var(--white);
+    background: var(--dark);
 }
 
 a {
-    text-decoration: none;
     color: var(--link);
+    text-decoration-color: transparent;
+    transition: text-decoration-color 0.4s ease;
 }
 a:hover,
 a:focus,
 a:active {
     color: var(--link-hover);
     text-decoration: underline;
-    text-decoration-color: var(--primary)
+    text-decoration-color: var(--link-hover);
+    transition: text-decoration-color 0.4s ease, color 0.4s ease-in;
 }
 
 ul {
@@ -41,35 +57,46 @@ ul {
     padding-left: 0;
 }
 
-p {
+main p {
     text-align: justify;
 }
 
 .clearfix::before,
 .clearfix::after {
     content: '';
-    display: table;
     clear: both;
+    display: table;
 }
 
 .text-navigation {
-    text-transform: uppercase;
     width: 100%;
-    
+    margin: auto;
+    max-width: 1200px;
+    text-transform: uppercase;
 }
+
+.link-list__link {
+    line-height: 1.5;
+    text-transform: capitalize;
+}
+
+
 .text-navigation .nav-link-list {
-    list-style: none;
     display: flex;
+    list-style: none;
     flex-flow: row wrap;
     justify-content: space-around;
 }
 .text-navigation .nav-link-list__link {
     width: 15%;
-    min-width: 80px;
-    max-width: 150px;
+    flex-grow: 1;
+    min-width: 110px;
     border-radius: 5px;
     text-align: center;
-    background: var(--light-grey);
+    background: var(--water);
+    transition: filter 2s;
+    filter: grayscale(1);
+    margin: 5px calc(var(--gutters) / 2);
 }
 
 .text-navigation .nav-link-list__link a {
@@ -78,7 +105,10 @@ p {
 }
 
 .text-navigation .nav-link-list__link:hover {
-    background: var(--grey);
+    /* background: var(--grey); */
+    transition: filter 1s ease;
+    color: var(--black);
+    filter: grayscale(0);
 }
 
 .container {
@@ -87,14 +117,19 @@ p {
 
 .audio {
     width: 100%;
+    opacity: 0.5;
+    transition: opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .video {
     opacity: 0.8;
     transition: opacity 0.5s;
+    width: 100%;
+    height: auto;
 }
 
-.video:hover {
+.video:hover,
+.audio:hover {
     opacity: 1;
 }
 
@@ -102,12 +137,19 @@ p {
     text-align: center;
 }
 
+.pull-left{
+    float: left;
+}
+
+.pull-right{
+    float: right;
+}
 
 .grid-container {
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 50% 50%;
-    margin: 0 calc(-1 * var(--gutters))
+    margin: 0 calc(-1 * var(--gutters));
 
 }
 
@@ -131,18 +173,62 @@ p {
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+    .grid-container {
+        display: grid;
+        grid-template-rows: none;
+        grid-template-columns: none;
+    
+    }
 
+    .left-column,
+    .main-column,
+    .right-column,
+    footer {
+        text-align: center;
+    }
+    .left-column {
+        order: 2;
+    }
+    
+    .main-column {
+        order: 1;
+    }
+
+    .right-column {
+        order: 3;
+    }
+
+    footer p[class^="pull-"] {
+        float: none;
+    }
 }
 
 @media only screen and ( min-width: 576px ) {
+    .audio-wrapper{
+    }
 
+    .audio-wrapper,
+    video {
+        margin: var(--gutters) auto ;
+        display: block;
+        max-width: 560px;
+    }
 }
 
+
 @media only screen and ( min-width: 768px ) {
+    .main-content {
+        margin: auto;
+        max-width: 740px;
+    }
 
 }
 
 @media only screen and ( min-width: 992px ) {
+    .audio-wrapper, video {
+        max-width: 100%;
+    }
+    
     .grid-container {
         display: grid;
         grid-template-columns: 20% auto 20%;
@@ -162,9 +248,22 @@ p {
 
     .right-column {
         order: 3;
+        text-align: right;
     }
 }
 
 @media only screen and ( min-width: 1200px ) {
-
+    .grid-container {
+        display: grid;
+        grid-template-columns: 16% auto 16%;
+        grid-template-rows: none;
+    
+    }
+    .main-content {
+        margin: auto;
+        max-width: 100%;
+    }
+    .main-column {
+        background: var(--white)
+    }
 }

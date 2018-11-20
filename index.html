@@ -14,20 +14,21 @@
     <meta http-equiv="refresh" content="60">
     <!--viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Добявяне на линк към normalize.css -->
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <!--Добявяне на линк към собствен css файл -->
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
     
     <!-- Основна хипервръзка за относителни адреси от страницата -->
-    <base href="//E:/Projects/Uni/WEB/Project/" target="_self">
-    
-    <!--Добявяне на линк към normalize.css -->
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <!--Добявяне на линк към собствен css файл -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <base href="/" target="_self">
+    <title>Wine tasting with HTML and CSS</title>
 </head>
 
 <body>
     <header class="header-container">
-        <h1>H1 should be only present once on a webpage</h1>
-        <h4>This is a &lt;h4&gt; sub heading text. It is used to describe the content in a bit more detail then the &lt;h1&gt;</h4>
+        <h1>Wine tastes good with CSS and HTML</h1>
+        <h4>This is a &lt;h4&gt; sub heading text. It is used to describe the content in more detail then the &lt;h1&gt;.</h4>
     </header>
 
     <nav class="text-navigation">
@@ -49,55 +50,51 @@
         <div class="row grid-container">
             <aside class="left-column grid-container__item">
                 <div class="left-nav">
-                    <ul class="nav-link-list">
-                        <li class="nav-link-list__link"><a href="#">link 1</a></li>
-                        <li class="nav-link-list__link"><a href="#">link 2</a></li>
-                        <li class="nav-link-list__link"><a href="#">link 3</a></li>
-                        <li class="nav-link-list__link"><a href="#">link 4</a></li>
-                        <li class="nav-link-list__link"><a href="#">link 5</a></li>
+                    <h5>Left navigation</h5>
+                    <ul class="link-list">
+                        <li class="link-list__link"><a href="#">link 1</a></li>
+                        <li class="link-list__link"><a href="#">link 2</a></li>
+                        <li class="link-list__link"><a href="#">link 3</a></li>
+                        <li class="link-list__link"><a href="#">link 4</a></li>
+                        <li class="link-list__link"><a href="#">link 5</a></li>
                     </ul>
                 </div>
             </aside>
 
             <section class="content-container main-column grid-container__item">
-                <article>
+                <header class="header-container">
+                    <h2>Wine tasting with &lt;h2&gt;</h2>
+                    <h4>Sub headings are usually in &lt;h2&gt; to &lt;h6&gt;, this one is &lt;h4&gt;</h4>
+                </header>
 
-                    <header class="header-container">
-                        <h2>Wine tasting with &lt;h2&gt;</h2>
-                        <h4>Sub headings are usually in &lt;h2&gt; to &lt;h6&gt;, this one is &lt;h4&gt;</h4>
-                    </header>
+                <p>The <strong>HTML Bring Attention To element</strong> (<strong><code>&lt;b&gt;</code></strong>) is used to draw the reader's attention to the element's contents, which are not otherwise granted special importance. This was formerly known as the <strong>Boldface element</strong>, and most browsers still draw the text in boldface. However, you should not use <code>&lt;b&gt;</code> for styling text; instead, you should use the CSS <code>font-weight</code> property to create boldface text, or the <code>&lt;strong&gt;</code> element to indicate that text is of special importance.</p>
 
-                    <p>The <strong>HTML Bring Attention To element</strong> (<strong><code>&lt;b&gt;</code></strong>) is used to draw the reader's attention to the element's contents, which are not otherwise granted special importance. This was formerly known as the <strong>Boldface element</strong>, and most browsers still draw the text in boldface. However, you should not use <code>&lt;b&gt;</code> for styling text; instead, you should use the CSS <code>font-weight</code> property to create boldface text, or the <code>&lt;strong&gt;</code> element to indicate that text is of special importance.</p>
+                <div class="audio-wrapper">
 
-                    <div class="audio-wrapper">
-
-                    <audio preload controls class="audio">
-                        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
-                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-                            Your browser does not support the audio tag.
-                        </audio>
-                    </div>
+                <audio preload controls class="audio">
+                    <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                        Your browser does not support the audio tag.
+                    </audio>
+                </div>
 
 
-                    <!-- viode poster sets image to be shown while loading -->
-                    <video class="video" width="100%" height="auto" muted autoplay preload loop poster="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"> 
-                        <source src="https://www.kj.com/sites/default/files/video/530262769.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-
-                </article>
-
-
+                <!-- viode poster sets image to be shown while loading -->
+                <video class="video" muted autoplay preload loop poster="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"> 
+                    <source src="https://www.kj.com/sites/default/files/video/530262769.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </section>
 
             <aside class="right-column grid-container__item">
                 <div class="related">
+                    <h5>Related items</h5>
                     <ul class="link-lsit">
-                        <li class="link"><a href="#">Link 1</a></li>
-                        <li class="link"><a href="#">Link 2</a></li>
-                        <li class="link"><a href="#">Link 3</a></li>
-                        <li class="link"><a href="#">Link 4</a></li>
-                        <li class="link"><a href="#">Link 5</a></li>
+                        <li class="link-list__link"><a href="#">Link 1</a></li>
+                        <li class="link-list__link"><a href="#">Link 2</a></li>
+                        <li class="link-list__link"><a href="#">Link 3</a></li>
+                        <li class="link-list__link"><a href="#">Link 4</a></li>
+                        <li class="link-list__link"><a href="#">Link 5</a></li>
                     </ul>
                 </div>
             </aside>
@@ -105,12 +102,12 @@
     </main>
 
     <footer class="footer-container">
-            <p>created by: Daut Molahasanov</p>
-            <p>Contact information:
+            <p class="pull-right">created by: Daut Molahasanov</p>
+            <p class="pull-left">Contact information:
                 <br />
                 <a href="mailto:daut.molahasanov@gmail.com">daut.molahasanov@gmail.com</a>.
                 <br />
-                <a href="tel:+359897339932">0 897 33 99 32</a>.</p>
+                <a href="tel:+359897339932">0 897 33 99 32</a>.
             </p>
     </footer>
 </body>
