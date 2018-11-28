@@ -5,13 +5,11 @@
     <!--Определяне на кодова таблица за страницата -->
     <meta charset="UTF-8">
     <!--Определяне на описание за съдържание на страницата -->
-    <meta name="description" content="Creating liquid layout step by step">
+    <meta name="description" content="Creating liquid layout step by step with wine">
     <!--Определяне на ключови думи за търсещи машини -->
-    <meta name="keywords" content="layout, desigh, tutorial, ?">
+    <meta name="keywords" content="layout, desigh, menus">
     <!--Определяне на автор на страницата -->
     <meta name="author" content="Daut Molahasanov">
-    <!--Рефреш на страницата -->
-    <meta http-equiv="refresh" content="60">
     <!--viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,9 +17,28 @@
     <link rel="stylesheet" type="text/css" href="./css/normalize.css">
     <!--Добявяне на линк към собствен css файл -->
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
+
+    <!--Добявяне на линкове към икони за смарт устройства -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./assets/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href="./assets/manifest.json">
+    <meta name="msapplication-TileColor" content="#4B7182">
+    <meta name="msapplication-TileImage" content="./assets/ms-icon-144x144.png">
+    <meta name="theme-color" content="#4B7182">
     
-    <!-- Основна хипервръзка за относителни адреси от страницата -->
-    <base href="/" target="_self">
+    
     <title>Wine tasting with HTML and CSS</title>
 </head>
 
@@ -71,7 +88,13 @@
 
                 <div class="audio-wrapper">
 
-                <audio preload controls class="audio">
+                    <div class="button-group">
+                        <button class="btn btn-default" onclick="getVolume(this)" type="button">What is the volume?</button>
+                        <button class="btn btn-default" onclick="setHalfVolume()" type="button">Set volume to 0.2</button>
+                        <button class="btn btn-default" onclick="setFullVolume()" type="button">Set volume to 1.0</button><br> 
+                    </div>
+
+                    <audio preload controls class="audio" volume="0.1"> 
                     <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
                     <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
                         Your browser does not support the audio tag.
@@ -110,5 +133,26 @@
                 <a href="tel:+359897339932">0 897 33 99 32</a>.
             </p>
     </footer>
+    <script>
+        var audioElement = document.getElementsByTagName("audio")[0];
+        audioElement.volume = 0.2;
+        function getVolume(self) { 
+            audioElement.volume
+            self.innerHTML = 'The volume is at ' + audioElement.volume;
+
+            setTimeout(function() {
+                self.innerHTML = 'What is the volume?';
+            },1500);
+            
+        } 
+        
+        function setHalfVolume() { 
+            audioElement.volume = 0.2;
+        } 
+        
+        function setFullVolume() { 
+            audioElement.volume = 1.0;
+        } 
+    </script>
 </body>
 </html>

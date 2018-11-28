@@ -38,11 +38,22 @@ body {
     background: var(--dark);
 }
 
+a::selection:hover {
+    text-decoration-color: var(--light-grey) !important;
+}
+
+a::selection:hover ,
+a::selection:focus ,
+a::selection:active {
+    text-decoration-color: var(--light-grey) !important;
+} 
+
 a {
     color: var(--link);
     text-decoration-color: transparent;
     transition: text-decoration-color 0.4s ease;
 }
+
 a:hover,
 a:focus,
 a:active {
@@ -59,6 +70,14 @@ ul {
 
 main p {
     text-align: justify;
+}
+
+.btn.btn-default {
+    border: 1px solid black;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px 5px 5px 0;
 }
 
 .clearfix::before,
