@@ -87,18 +87,20 @@
                 <p>The <strong>HTML Bring Attention To element</strong> (<strong><code>&lt;b&gt;</code></strong>) is used to draw the reader's attention to the element's contents, which are not otherwise granted special importance. This was formerly known as the <strong>Boldface element</strong>, and most browsers still draw the text in boldface. However, you should not use <code>&lt;b&gt;</code> for styling text; instead, you should use the CSS <code>font-weight</code> property to create boldface text, or the <code>&lt;strong&gt;</code> element to indicate that text is of special importance.</p>
 
                 <div class="audio-wrapper">
-
                     <div class="button-group">
-                        <button class="btn btn-default" onclick="getVolume(this)" type="button">What is the volume?</button>
-                        <button class="btn btn-default" onclick="setHalfVolume()" type="button">Set volume to 0.2</button>
-                        <button class="btn btn-default" onclick="setFullVolume()" type="button">Set volume to 1.0</button><br> 
+                        <button class="btn btn-default" id="getVolume" type="button">What is the volume?</button>
+                        <button class="btn btn-default" id="setVolume" type="button">Set volume to 0.2</button>
+                        <button class="btn btn-default" id="setFullVolume" type="button">Set volume to 1.0</button><br> 
                     </div>
-
-                    <audio preload controls class="audio" volume="0.1"> 
-                    <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
-                    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                    <audio id="audio-element" preload controls class="audio"> 
+                        
+                        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
                         Your browser does not support the audio tag.
                     </audio>
+                    
+
+                    
                 </div>
 
 
@@ -128,31 +130,11 @@
             <p class="pull-right">created by: Daut Molahasanov</p>
             <p class="pull-left">Contact information:
                 <br />
-                <a href="mailto:daut.molahasanov@gmail.com">daut.molahasanov@gmail.com</a>.
+                <a href="mailto:daut.molahasanov@gmail.com">daut.molahasanov@gmail.com</a>
                 <br />
-                <a href="tel:+359897339932">0 897 33 99 32</a>.
+                <a href="tel:+359897339932">0 897 33 99 32</a>
             </p>
     </footer>
-    <script>
-        var audioElement = document.getElementsByTagName("audio")[0];
-        audioElement.volume = 0.2;
-        function getVolume(self) { 
-            audioElement.volume
-            self.innerHTML = 'The volume is at ' + audioElement.volume;
-
-            setTimeout(function() {
-                self.innerHTML = 'What is the volume?';
-            },1500);
-            
-        } 
-        
-        function setHalfVolume() { 
-            audioElement.volume = 0.2;
-        } 
-        
-        function setFullVolume() { 
-            audioElement.volume = 1.0;
-        } 
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
